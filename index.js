@@ -1,1 +1,11 @@
-console.log('re-testing')
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4001
+
+
+app.get('/',(req, res) => {
+  return res.json("Welcome to our API")
+ });
+
+app.listen(4001, () => 
+  console.log(`Example app listening on port ${4001}!`))
