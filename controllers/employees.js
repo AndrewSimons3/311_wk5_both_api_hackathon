@@ -1,3 +1,5 @@
+const mysql = require('mysql')
+const pool = require('../sql/connection')
 const employees = require()
 let employeeCounter = employees.length;
 
