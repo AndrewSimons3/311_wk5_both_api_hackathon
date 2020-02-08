@@ -1,5 +1,5 @@
 const mysql = require('mysql')
-const pool = require('../mysql/connection')
+const pool = require('../sql/connection')
 
 
 const getEmployees = (req, res) => {
@@ -43,4 +43,4 @@ const getEmployeesByFirstName = (req, res) => {
     return res.status(500).send('An unexpected error occurred');
   }
 
-   module.exports = {getEmployees, getEmployeesById, getEmployeesByFirstName};
+   module.exports = {getEmployees, getEmployeesById, getEmployeesByFirstName}
