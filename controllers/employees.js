@@ -12,7 +12,7 @@ const getEmployees = (req, res) => {
 const getEmployeesById = (req, res) => {
   // SELECT USERS WHERE ID = <REQ PARAMS ID>
   let sql = 'SELECT * FROM ?? WHERE ?? = ? LIMIT 100';
-  const replacements = ['employees', 'emp_no', req.params.emp_no]
+  const replacements = ['employees', 'emp_no', req.params.id]
   // WHAT GOES IN THE BRACKETS
   sql = mysql.format(sql, replacements)
 
@@ -34,6 +34,9 @@ const getEmployeesByFirstName = (req, res) => {
 
   pool.query(sql, (err, rows) => {
     if (err) return handleSQLError(res, err)
+    if(rows.length < 1) {
+      return res.status(404).send('Employee not found');
+    }
     return res.json(rows);
   })
 }

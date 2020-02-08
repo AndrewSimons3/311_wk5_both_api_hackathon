@@ -8,7 +8,7 @@ class Connection {
         connectionLimit: 100,
         host: '35.188.120.238', //enter host address
         user: 'root',
-        database: 'Admin'
+        database: 'employees'
       })
 
       return this.pool

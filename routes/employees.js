@@ -9,6 +9,6 @@ router.get('/', employeeController.getEmployees)
 
 router.get('/:id', employeeController.getEmployeesById)
 
-router.get('firstname/:first_name', employeeController.getEmployeesByFirstName)
+router.get('/firstname/:first_name', employeeController.getEmployeesByFirstName)
 
 module.exports = router
